@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo1"
+    android:orientation="vertical"
+    tools:context=".Comprar">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Titulo"
+        android:text="TURISMO IMPERIAL S.R.L."
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/holo_green_light"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:layout_marginTop="8dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblRegistrarCompra"
+        android:text="Registrar Comprar"
+        android:textColor="@android:color/black"
+        android:background="@android:color/background_light"
+        android:alpha="0.8"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_below="@+id/Titulo"
+        android:layout_marginTop="10dp">
+    </TextView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contenedorCompra"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="#ffffff"
+        android:alpha="0.9"
+        android:layout_below="@id/lblRegistrarCompra">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtUsuarioCompra"
+            android:hint="Usuario"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:drawableLeft="@drawable/usuario">
+        </EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtFecha"
+            android:hint="Fecha"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:drawableLeft="@drawable/fecha"
+            android:layout_below="@+id/txtUsuarioCompra">
+        </EditText>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spnCiudad"
+            android:entries="@array/listaCiudad"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_below="@+id/txtFecha">
+        </Spinner>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCantidadAdulto"
+            android:hint="Cantidad Adultos"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:drawableLeft="@drawable/grupos"
+            android:layout_below="@+id/spnCiudad">
+        </EditText>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCantidadNinio"
+            android:hint="Cantidad Niños"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:drawableLeft="@drawable/grupos"
+            android:layout_below="@+id/txtCantidadAdulto">
+        </EditText>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spnModalidad"
+            android:entries="@array/listaModalidad"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:layout_marginHorizontal="30dp"
+            android:layout_below="@id/txtCantidadNinio">
+        </Spinner>
+        <!--
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblPrecio"
+            android:hint="Costo de viaje"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:drawableLeft="@drawable/moneda"
+            android:layout_below="@+id/txtModalidad">
+        </TextView>-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtObservacion"
+            android:hint="Observacion"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            android:drawableLeft="@drawable/observacion"
+            android:layout_below="@+id/spnModalidad">
+        </EditText>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRegistrarCompra"
+            android:background="@drawable/borde1"
+            android:text="Registrar Compra"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_below="@+id/txtObservacion">
+        </Button>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnRegistrarCompra">
+        </TextView>
+
+    </RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Regresar6"
+        android:background="@drawable/borde2"
+        android:text="Volver a Menu de Opciones"
+        android:textStyle="italic"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="50dp"
+        android:drawableLeft="@drawable/volver"
+        android:layout_below="@+id/contenedorCompra">
+
+    </Button>
+
+</RelativeLayout>

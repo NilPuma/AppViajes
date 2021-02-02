@@ -1,0 +1,88 @@
+DROP DATABASE IF EXISTS TURISMO;
+ CREATE DATABASE TURISMO;
+
+/*tablas independientes*/
+
+#Tabla cliente
+CREATE TABLE CLIENTE
+(
+    ID_Cliente integer not null AUTO_INCREMENT,
+    Nombres varchar(15) not null,
+    Apellidos varchar(20) not null,
+    Dni varchar(8) not null,
+    Celular varchar(10)  null,
+    Correo varchar(20) null,
+    id varchar(20) null,
+    pass varchar(20) null,
+    primary key(ID_Cliente)
+)ENGINE=INNODB;
+
+#Tabla Paquete
+CREATE TABLE PAQUETE
+(
+    ID_Paquete integer not null AUTO_INCREMENT,
+    Modalidad varchar(30) not null,
+    Precio_Adulto double null,
+    Precio_ninio double null,
+    primary key(ID_Paquete)
+)ENGINE=INNODB;
+
+
+#Tabla Destino
+CREATE TABLE DESTINO
+(
+    ID_Destino integer not null AUTO_INCREMENT,
+    Nombre varchar(30) not null,
+    Ubicacion varchar(30) null,
+    Adultos integer null,
+    Ninios integer null,
+    primary key(ID_Destino)
+)ENGINE=INNODB;
+
+#Tabla Transacciones
+CREATE TABLE TRANSACCION
+(
+    ID_Transaccion integer not null AUTO_INCREMENT,
+    Fecha varchar(20) not null,
+    Total double null,
+    Obeservaciones varchar(50) null,
+    ID_Cliente integer not null,
+    ID_Paquete integer not null,
+    ID_Destino integer not null,
+    INDEX(ID_Cliente),
+    INDEX(ID_Paquete),
+    INDEX(ID_Destino),
+    primary key(ID_Transaccion),
+    foreign key(ID_Cliente) references CLIENTE(ID_Cliente),
+    foreign key(ID_Paquete) references PAQUETE(ID_Paquete),
+    foreign key(ID_Destino) references DESTINO(ID_Destino)
+)ENGINE=INNODB;
+
+
+
+
+
+/*Volcado de datos en las tablas*/
+
+#volcado a tabla cliente
+
+INSERT INTO CLIENTE VALUES(DEFAULT,'Nilton','Puma','70310470','979018820','puma.71@gmail.com','puma','1234');
+INSERT INTO CLIENTE VALUES(DEFAULT,'Branyer','Padillo','72128934','932874163','Kael.02@gmail.com','kael','1234');
+
+#volcado a tabla paquete
+INSERT INTO PAQUETE VALUES(DEFAULT,'2 dias/1 noche',100,50);
+INSERT INTO PAQUETE VALUES(DEFAULT,'3 dias/2 noche',150,75);
+INSERT INTO PAQUETE VALUES(DEFAULT,'4 dias/3 noche',200,100);
+INSERT INTO PAQUETE VALUES(DEFAULT,'5 dias/4 noche',250,125);
+INSERT INTO PAQUETE VALUES(DEFAULT,'6 dias/5 noche',300,150);
+INSERT INTO PAQUETE VALUES(DEFAULT,'7 dias/6 noche',350,200);
+
+
+#volcado a tabla destino
+INSERT INTO DESTINO VALUES(DEFAULT,'Cusco','Machupicchu',4,2);
+INSERT INTO DESTINO VALUES(DEFAULT,'Puno','Uros',2,1);
+
+
+#volcado a tabla transaccion
+INSERT INTO TRANSACCION VALUES(DEFAULT,'05/10/2019',500,'Ninguna','1','1','1');
+INSERT INTO TRANSACCION VALUES(DEFAULT,'05/10/2019',500,'Ninguna','2','3','2');

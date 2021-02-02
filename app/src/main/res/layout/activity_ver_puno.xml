@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo1"
+    android:orientation="vertical"
+    tools:context=".verPuno">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Titulo"
+        android:text="TURISMO IMPERIAL S.R.L."
+        android:textColor="@android:color/holo_red_dark"
+        android:background="@android:color/holo_green_light"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:layout_marginTop="8dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblPuno"
+        android:text="Puno"
+        android:textColor="@android:color/black"
+        android:background="@android:color/background_light"
+        android:alpha="0.8"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_below="@+id/Titulo"
+        android:layout_marginTop="10dp">
+    </TextView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/Contenderor1"
+        android:background="#ffffff"
+        android:alpha="0.9"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_below="@+id/lblPuno">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtsubtitulo1"
+            android:text="Galeria de Fotos"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_marginTop="5dp">
+        </TextView>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seccionImagenes"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/txtsubtitulo1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#ffff00">
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/p1">
+                </ImageView>
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/p2">
+                </ImageView>
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/p3">
+                </ImageView>
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/p4">
+                </ImageView>
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/p5">
+                </ImageView>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="8dp"
+            android:layout_below="@+id/seccionImagenes">
+        </TextView>
+
+    </RelativeLayout>
+
+    //Seccion video
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/Contenedor2"
+        android:background="#ffffff"
+        android:alpha="0.9"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_below="@+id/Contenderor1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtsubtitulo2"
+            android:text="Galeria de Video"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:layout_marginTop="5dp">
+        </TextView>
+        <VideoView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/video"
+            android:layout_below="@+id/txtsubtitulo2">
+
+        </VideoView>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/txtsubtitulo2">
+            <VideoView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/videoPuno">
+
+            </VideoView>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnIrMapa"
+        android:background="@drawable/borde1"
+        android:text="ir a mapa"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_below="@id/Contenedor2">
+    </Button>
+
+
+</RelativeLayout>

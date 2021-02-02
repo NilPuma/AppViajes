@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">VentaBoletos</string>
+
+    <string-array name="listaModalidad">
+        <item>[Elegir Modalidad]</item>
+        <item>2 Días y 1 Noches</item>
+        <item>3 Días y 2 Noches</item>
+        <item>4 Días y 3 Noches</item>
+        <item>5 Días y 4 Noches</item>
+        <item>6 Días y 5 Noches</item>
+        <item>7 Días y 6 Noches</item>
+    </string-array>
+    <string-array name="listaCiudad">
+        <item>[Elegir Ciudad]</item>
+        <item>AREQUIPA</item>
+        <item>CUSCO</item>
+        <item>PUNO</item>
+
+    </string-array>
+</resources>
